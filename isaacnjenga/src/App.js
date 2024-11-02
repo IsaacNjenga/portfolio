@@ -7,8 +7,8 @@ import Home from "./pages/home";
 import Portfolio from "./pages/portfolio";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3001/injenga"; //local
-//axios.defaults.baseURL = "http://localhost:3001/injenga"; //deployed
+//axios.defaults.baseURL = "http://localhost:3001/injenga"; //local
+axios.defaults.baseURL = "https://portfolio-back-pink.vercel.app/injenga"; //deployed
 axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter([
