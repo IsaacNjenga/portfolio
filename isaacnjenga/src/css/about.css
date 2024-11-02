@@ -1,0 +1,40 @@
+.about-body {
+  color: white;
+  background-color: rgba(60, 59, 57, 0.171);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.front,
+.back,
+.db,
+.cloud {
+  border-radius: 15px;
+  padding: 15px;
+  background-color: rgba(250, 235, 215, 0.21);
+  max-width: 217px;
+  width: 100%;
+  margin: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.stack-1,
+.stack-2 {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 5px;
+}
+ul {
+  margin: 0;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
