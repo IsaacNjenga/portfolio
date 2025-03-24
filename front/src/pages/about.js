@@ -79,6 +79,7 @@ function About() {
               textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
               fontFamily: "Raleway",
               borderBottom: "3px solid #2a75d7",
+              color: "#3c3b39",
             }}
           >
             About
@@ -162,7 +163,11 @@ function About() {
           }}
         >
           <Title
-            style={{ fontFamily: "Raleway", borderBottom: "3px solid #2a75d7" }}
+            style={{
+              fontFamily: "Raleway",
+              borderBottom: "3px solid #2a75d7",
+              color: "#3c3b39",
+            }}
           >
             Skills
           </Title>

@@ -66,7 +66,11 @@ function Navbar() {
                   >
                     <Link
                       to="/"
-                      style={{ textDecoration: "none", color: "#3c3b39" }}
+                      style={{
+                        textDecoration: "none",
+                        color: "#3c3b39",
+                        borderBottom: "2px solid #2a75d7",
+                      }}
                     >
                       ISAAC NJENGA
                     </Link>
@@ -87,7 +91,11 @@ function Navbar() {
                   >
                     <Link
                       to="/"
-                      style={{ textDecoration: "none", color: "#3c3b39" }}
+                      style={{
+                        textDecoration: "none",
+                        color: "#3c3b39",
+                        borderBottom: "2px solid #2a75d7",
+                      }}
                     >
                       ISAAC NJENGA
                     </Link>
