@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -7,8 +7,10 @@ import Services from "./pages/services";
 import Resume from "./pages/resume";
 import Portfolio from "./pages/portfolio";
 import Contact from "./pages/contact";
+import { AnimatePresence } from "framer-motion";
 export const UserContext = createContext();
 function App() {
+  const location = useLocation();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -19,8 +21,8 @@ function App() {
   return (
     <>
       <UserContext.Provider value={{ isMobile, setIsMobile }}>
-        <BrowserRouter>
-          <Routes>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Navbar />}>
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
@@ -30,7 +32,7 @@ function App() {
               <Route path="contact" element={<Contact />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </AnimatePresence>
       </UserContext.Provider>
     </>
   );

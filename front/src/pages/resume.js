@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Timeline, Typography, Card, Divider } from "antd";
+import { motion } from "framer-motion";
 import "../assets/css/resume.css";
 import { UserContext } from "../App";
 
@@ -131,48 +132,60 @@ function Resume() {
   ];
   return (
     <>
-      <div className="resume-bg">
-        {" "}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "22px 0px",
-            background: "rgba(255, 255, 255, 0.8)",
-            fontFamily: "Raleway",
-          }}
-        >
-          <Title
+      {" "}
+      <motion.div
+        initial={{ opacity: 0, x: 100 }} // Start hidden and to the right
+        animate={{ opacity: 1, x: 0 }} // Fade in and slide in
+        exit={{ opacity: 0, x: -100 }} // Fade out and slide out left
+        transition={{ duration: 0.5 }} // Smooth animation
+      >
+        <div className="resume-bg">
+          {" "}
+          <div
             style={{
-              textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "22px 0px",
+              background: "rgba(255, 255, 255, 0.8)",
               fontFamily: "Raleway",
-              borderBottom: "3px solid #2a75d7",
-              color: "#3c3b39",
             }}
           >
-            Resume
-          </Title>
-          <Text
-            type="secondary"
-            style={{ marginTop: 8, textAlign: "center", fontFamily: "Raleway" }}
+            <Title
+              style={{
+                textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
+                fontFamily: "Raleway",
+                borderBottom: "3px solid #2a75d7",
+                color: "#3c3b39",
+              }}
+            >
+              Resume
+            </Title>
+            <Text
+              type="secondary"
+              style={{
+                marginTop: 8,
+                textAlign: "center",
+                fontFamily: "Raleway",
+              }}
+            >
+              A timeline preview of my accomplishments.
+            </Text>
+          </div>
+          <div
+            style={{
+              background: "rgba(255, 255, 255, 0.8)",
+              padding: "10px 20px",
+            }}
           >
-            A timeline preview of my accomplishments.
-          </Text>
+            <Timeline
+              mode={isMobile ? "left" : "alternate"}
+              items={timelineItems}
+            />
+          </div>
         </div>
-        <div
-          style={{
-            background: "rgba(255, 255, 255, 0.8)",
-            padding: "10px 20px",
-          }}
-        >
-          <Timeline
-            mode={isMobile ? "left" : "alternate"}
-            items={timelineItems}
-          />
-        </div>
-      </div>
+      </motion.div>
     </>
   );
 }

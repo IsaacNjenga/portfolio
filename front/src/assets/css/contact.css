@@ -6,8 +6,9 @@
 .contact-item {
   text-align: center;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: transform 0.3s;
+  background:  rgba(255, 255, 255, 1);
 }
 
 .contact-item:hover {
@@ -17,4 +18,8 @@
 .contact-icon {
   margin-bottom: 10px;
   font-size: 30px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.8);
 }

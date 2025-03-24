@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Card, Divider, Typography } from "antd";
 import "../assets/css/services.css";
 import webIcon from "../assets/icons/webDevelopment.png";
@@ -18,7 +19,7 @@ const myServices = [
         <li>Custom Website Development</li>
         <li>Frontend Development</li>
         <li>Backend Development</li>
-        <li>Full Stack Web Applications </li>
+        <li>Full Stack Web Applications</li>
       </ul>
     ),
     icon: webIcon,
@@ -74,7 +75,12 @@ const myServices = [
 
 function Services() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: 100 }} // Start hidden and to the right
+      animate={{ opacity: 1, x: 0 }} // Fade in and slide in
+      exit={{ opacity: 0, x: -100 }} // Fade out and slide out left
+      transition={{ duration: 0.5 }} // Smooth animation
+    >
       <div className="services-bg">
         <div
           style={{
@@ -118,9 +124,8 @@ function Services() {
             }}
           >
             {myServices.map((s) => (
-              <Card hoverable>
+              <Card hoverable key={s.id}>
                 <div
-                  key={s.id}
                   style={{
                     textAlign: "center",
                   }}
@@ -142,7 +147,7 @@ function Services() {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 

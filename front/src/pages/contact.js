@@ -6,6 +6,7 @@ import {
   PhoneOutlined,
 } from "@ant-design/icons";
 import "../assets/css/contact.css";
+import { motion } from "framer-motion";
 
 const { Title, Text } = Typography;
 
@@ -36,50 +37,63 @@ const myContact = [
 
 function Contact() {
   return (
-    <div className="contact-bg">
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "22px 0px",
-          background: "rgba(255, 255, 255, 0.8)",
-          fontFamily: "Raleway",
-        }}
+    <>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }} // Start hidden and to the right
+        animate={{ opacity: 1, x: 0 }} // Fade in and slide in
+        exit={{ opacity: 0, x: -100 }} // Fade out and slide out left
+        transition={{ duration: 0.5 }} // Smooth animation
       >
-        <Title
-          style={{
-            textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
-            fontFamily: "Raleway",
-            borderBottom: "3px solid #2a75d7",
-            color: "#3c3b39",
-          }}
-        >
-          Contact
-        </Title>
-        <Text
-          type="secondary"
-          style={{ marginTop: 8, textAlign: "center", fontFamily: "Raleway" }}
-        >
-          Reach out to me whenever
-        </Text>
-      </div>
+        <div className="contact-bg">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "22px 0px",
+              background: "rgba(255, 255, 255, 0.8)",
+              fontFamily: "Raleway",
+            }}
+          >
+            <Title
+              style={{
+                textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
+                fontFamily: "Raleway",
+                borderBottom: "3px solid #2a75d7",
+                color: "#3c3b39",
+              }}
+            >
+              Contact
+            </Title>
+            <Text
+              type="secondary"
+              style={{
+                marginTop: 8,
+                textAlign: "center",
+                fontFamily: "Raleway",
+              }}
+            >
+              Reach out to me whenever
+            </Text>
+          </div>
 
-      <Card className="contact-card">
-        <Row gutter={[24, 24]} justify="center">
-          {myContact.map((c) => (
-            <Col xs={24} sm={12} md={8} key={c.id}>
-              <Card variant={false} className="contact-item">
-                <div className="contact-icon">{c.icon}</div>
-                <Title level={4}>{c.name}</Title>
-                <Text>{c.value}</Text>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Card>
-    </div>
+          <Card className="contact-card">
+            <Row gutter={[24, 24]} justify="center">
+              {myContact.map((c) => (
+                <Col xs={24} sm={12} md={8} key={c.id}>
+                  <Card variant={false} className="contact-item">
+                    <div className="contact-icon">{c.icon}</div>
+                    <Title level={4}>{c.name}</Title>
+                    <Text>{c.value}</Text>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Card>
+        </div>
+      </motion.div>
+    </>
   );
 }
 

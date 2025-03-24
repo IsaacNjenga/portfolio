@@ -4,6 +4,8 @@ import Pic from "../assets/images/pic.jpg";
 import { RightOutlined } from "@ant-design/icons";
 import "../assets/css/about.css";
 import { UserContext } from "../App";
+import { motion } from "framer-motion";
+
 const { Title, Text } = Typography;
 
 const calculateAge = (birthday) => {
@@ -61,143 +63,155 @@ function About() {
   const { isMobile } = useContext(UserContext);
   return (
     <>
-      <div className="about-bg" style={{ fontFamily: "Raleway" }}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "22px 0px",
-            background: "rgba(255, 255, 255, 0.8)",
-            fontFamily: "Raleway",
-          }}
-        >
-          <Title
+      {" "}
+      <motion.div
+        initial={{ opacity: 0, x: 100 }} // Start hidden and to the right
+        animate={{ opacity: 1, x: 0 }} // Fade in and slide in
+        exit={{ opacity: 0, x: -100 }} // Fade out and slide out left
+        transition={{ duration: 0.5 }} // Smooth animation
+      >
+        <div className="about-bg" style={{ fontFamily: "Raleway" }}>
+          <div
             style={{
-              textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "22px 0px",
+              background: "rgba(255, 255, 255, 0.8)",
               fontFamily: "Raleway",
-              borderBottom: "3px solid #2a75d7",
-              color: "#3c3b39",
             }}
           >
-            About
-          </Title>
-          <Text
-            type="secondary"
-            style={{ marginTop: 8, textAlign: "center", fontFamily: "Raleway" }}
-          >
-            Passionate full-stack developer with experience in building dynamic
-            and scalable web applications.
-          </Text>
-        </div>
-
-        <Card>
-          <Row gutter={[20, 20]} align="middle">
-            <Col
-              xs={24}
-              sm={24}
-              md={10}
-              lg={10}
-              style={{ textAlign: "center" }}
+            <Title
+              style={{
+                textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
+                fontFamily: "Raleway",
+                borderBottom: "3px solid #2a75d7",
+                color: "#3c3b39",
+              }}
             >
-              <Image
-                src={Pic}
-                alt="Profile"
-                width={isMobile ? 300 : 380}
-                height={400}
-                style={{
-                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-                  objectFit: "cover",
-                }}
-              />
-            </Col>
-            <Col xs={24} sm={24} md={14} lg={14}>
-              <Title
-                level={3}
-                style={{
-                  fontSize: "2rem",
-                  fontFamily: "Raleway",
-                  borderBottom: "2px solid #2a75d7",
-                }}
-              >
-                Full Stack Web Developer
-              </Title>
-              <Text type="secondary" style={{ fontFamily: "Raleway" }}>
-                I am an enthusiastic developer skilled in frontend and backend
-                technologies, passionate about creating seamless user
-                experiences.
-              </Text>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-                  gap: "10px",
-                  marginTop: "20px",
-                }}
-              >
-                {myDetails.map((detail) => (
-                  <Text
-                    key={detail.id}
-                    style={{ fontSize: "1rem", fontFamily: "Raleway" }}
-                  >
-                    <RightOutlined style={{ marginRight: "8px" }} />
-                    <strong>{detail.name}:</strong> {detail.value}
-                  </Text>
-                ))}
-              </div>
-            </Col>
-          </Row>
-        </Card>
+              About
+            </Title>
+            <Text
+              type="secondary"
+              style={{
+                marginTop: 8,
+                textAlign: "center",
+                fontFamily: "Raleway",
+              }}
+            >
+              Passionate full-stack developer with experience in building
+              dynamic and scalable web applications.
+            </Text>
+          </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "20px 10px",
-            background: "rgba(255, 255, 255, 0.8)",
-            fontFamily: "Raleway",
-          }}
-        >
-          <Title
+          <Card>
+            <Row gutter={[20, 20]} align="middle">
+              <Col
+                xs={24}
+                sm={24}
+                md={10}
+                lg={10}
+                style={{ textAlign: "center" }}
+              >
+                <Image
+                  src={Pic}
+                  alt="Profile"
+                  width={isMobile ? 300 : 380}
+                  height={400}
+                  style={{
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                    objectFit: "cover",
+                  }}
+                />
+              </Col>
+              <Col xs={24} sm={24} md={14} lg={14}>
+                <Title
+                  level={3}
+                  style={{
+                    fontSize: "2rem",
+                    fontFamily: "Raleway",
+                    borderBottom: "2px solid #2a75d7",
+                  }}
+                >
+                  Full Stack Web Developer
+                </Title>
+                <Text type="secondary" style={{ fontFamily: "Raleway" }}>
+                  I am an enthusiastic developer skilled in frontend and backend
+                  technologies, passionate about creating seamless user
+                  experiences.
+                </Text>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                    gap: "10px",
+                    marginTop: "20px",
+                  }}
+                >
+                  {myDetails.map((detail) => (
+                    <Text
+                      key={detail.id}
+                      style={{ fontSize: "1rem", fontFamily: "Raleway" }}
+                    >
+                      <RightOutlined style={{ marginRight: "8px" }} />
+                      <strong>{detail.name}:</strong> {detail.value}
+                    </Text>
+                  ))}
+                </div>
+              </Col>
+            </Row>
+          </Card>
+
+          <div
             style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "20px 10px",
+              background: "rgba(255, 255, 255, 0.8)",
               fontFamily: "Raleway",
-              borderBottom: "3px solid #2a75d7",
-              color: "#3c3b39",
             }}
           >
-            Skills
-          </Title>
-          <Text
-            type="secondary"
-            style={{ display: "block", marginTop: 8, fontFamily: "Raleway" }}
-          >
-            Proficient in modern web development technologies and frameworks.
-          </Text>
-        </div>
+            <Title
+              style={{
+                fontFamily: "Raleway",
+                borderBottom: "3px solid #2a75d7",
+                color: "#3c3b39",
+              }}
+            >
+              Skills
+            </Title>
+            <Text
+              type="secondary"
+              style={{ display: "block", marginTop: 8, fontFamily: "Raleway" }}
+            >
+              Proficient in modern web development technologies and frameworks.
+            </Text>
+          </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: isMobile ? "20px" : "30px",
-            padding: "10px 50px",
-            background: "rgba(255, 255, 255, 0.8)",
-            fontFamily: "Raleway",
-          }}
-        >
-          {mySkills.map((skill) => (
-            <div key={skill.id}>
-              <Text style={{ fontWeight: "bold" }}>{skill.name}</Text>
-              <div>
-                <Progress percent={skill.value} />
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+              gap: isMobile ? "20px" : "30px",
+              padding: "10px 50px",
+              background: "rgba(255, 255, 255, 0.8)",
+              fontFamily: "Raleway",
+            }}
+          >
+            {mySkills.map((skill) => (
+              <div key={skill.id}>
+                <Text style={{ fontWeight: "bold" }}>{skill.name}</Text>
+                <div>
+                  <Progress percent={skill.value} />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
