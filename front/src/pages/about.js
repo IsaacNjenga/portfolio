@@ -4,7 +4,6 @@ import Pic from "../assets/images/pic.jpg";
 import { RightOutlined } from "@ant-design/icons";
 import "../assets/css/about.css";
 import { UserContext } from "../App";
-import { formatDistanceToNow } from "date-fns";
 const { Title, Text } = Typography;
 
 const calculateAge = (birthday) => {
