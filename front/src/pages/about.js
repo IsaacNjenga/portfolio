@@ -29,7 +29,7 @@ const myDetails = [
     value: calculateAge("10 Dec 2001"),
   },
   { id: 3, name: "Website", value: "N/A" },
-  { id: 4, name: "Phone", value: "(KE)+254 740 900-061" },
+  { id: 4, name: "Phone", value: "(KE) +254 740 900-061" },
   {
     id: 5,
     name: "Email",
