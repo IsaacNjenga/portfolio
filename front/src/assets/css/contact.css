@@ -1,0 +1,20 @@
+.contact-bg {
+  background: url("../images/contact-bg.jpg") no-repeat center center/cover;
+  padding: 0px 0px;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  margin-bottom: 10px;
+  font-size: 30px;
+}

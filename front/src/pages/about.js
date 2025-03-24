@@ -36,7 +36,7 @@ const myDetails = [
     value: (
       <a
         href="mailto:njengaisaac789@gmail.com"
-        style={{ color: "black", textDecoration: "none" }}
+        style={{ color: "#1890ff", textDecoration: "none" }}
       >
         njengaisaac789@gmail.com
       </a>
