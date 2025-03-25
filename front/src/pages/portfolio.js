@@ -32,6 +32,10 @@ import umc2 from "../assets/images/umcookies/Screenshot (258).png";
 import umc3 from "../assets/images/umcookies/Screenshot (259).png";
 import umc4 from "../assets/images/umcookies/Screenshot (260).png";
 
+import w1 from "../assets/images/whisper/Screenshot (261).png";
+import w2 from "../assets/images/whisper/Screenshot (262).png";
+import w3 from "../assets/images/whisper/Screenshot (263).png";
+
 const { Title, Text, Paragraph } = Typography;
 
 function Portfolio() {
@@ -41,6 +45,7 @@ function Portfolio() {
   const ukfPics = [ukf1, ukf2, ukf3, ukf4, ukf5];
   const tkfPics = [tkf1, tkf2, tkf3];
   const umcPics = [umc1, umc2, umc3, umc4];
+  const whisperPics = [w1, w2, w3];
 
   const tabItems = [
     {
@@ -355,7 +360,7 @@ function Portfolio() {
               style={{ textAlign: "center" }}
             >
               <Carousel autoplay autoplaySpeed={2500} fade>
-                {tkfPics.map((picSrc) => (
+                {whisperPics.map((picSrc) => (
                   <Image
                     src={picSrc}
                     alt="easym"
@@ -374,40 +379,37 @@ function Portfolio() {
                 Whisper
               </Title>
               <Paragraph style={{ fontFamily: "Roboto" }}>
-                The Toto Kalezi Foundation is a non-governmental and non-profit
-                organization dedicated to empowering the lives of street
-                children and vulnerable communities. Similar to the Uplifting
-                Kindness Foundation, this project was brought to me with the aim
-                of facilitating how the organization would receive their
-                donations through a paywall.
+                In my latest project, I developed a messaging app that leverages
+                the Stream Chat API to facilitate seamless two-way communication
+                between users. This powerful API provides a robust framework for
+                building real-time chat applications, allowing users to send and
+                receive messages instantly. One of the standout features of the
+                app is its ability to create group messages, enabling users to
+                engage in conversations with multiple participants
+                simultaneously. This functionality is particularly valuable for
+                team collaboration, social interactions, and community building.
               </Paragraph>
               <Paragraph style={{ fontFamily: "Roboto" }}>
-                To create a seamless and user-friendly experience, I developed
-                the website using ReactJS. Its component-based architecture
-                allowed me to create reusable UI components, which significantly
-                streamlined the development process. For the user interface, I
-                utilized Ant Design (antd), a comprehensive design system that
-                provides a set of high-quality React components. This enabled me
-                to implement a visually appealing and responsive layout,
-                ensuring that users could easily navigate the donation process.
-              </Paragraph>
-              <Paragraph style={{ fontFamily: "Roboto" }}>
-                The integration of payment gateways, such as Stripe and PayPal,
-                was also facilitated through React, allowing for secure and
-                efficient transactions. The combination of ReactJS and Ant
-                Design not only enhanced the overall functionality of the
-                website but also ensured that it aligned with the foundation's
-                mission of making a positive impact in the community.
+                The integration of the Stream Chat API not only simplifies the
+                implementation of messaging features but also enhances the
+                overall user experience with its rich set of functionalities,
+                such as message threading, reactions, and user presence
+                indicators. These features contribute to a dynamic and
+                interactive environment, making the app a promising addition to
+                various projects. By incorporating real-time messaging
+                capabilities, I have created a platform that fosters
+                communication and connection, which is essential in today’s
+                digital landscape.
               </Paragraph>
               <dupiv style={{ marginTop: "20px" }}>
                 <Button
                   type="primary"
-                  href="https://toto-kalezi.vercel.app/"
+                  href="https://whisper-plum-ten.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ fontFamily: "Raleway" }}
                 >
-                  Visit Toto Kalezi Foundation
+                  Visit Whisper
                 </Button>
               </dupiv>
             </Col>
