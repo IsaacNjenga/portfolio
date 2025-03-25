@@ -84,8 +84,10 @@ function Contact() {
                 <Col xs={24} sm={12} md={8} key={c.id}>
                   <Card variant={false} className="contact-item">
                     <div className="contact-icon">{c.icon}</div>
-                    <Title level={4}>{c.name}</Title>
-                    <Text>{c.value}</Text>
+                    <Title level={3} style={{ fontFamily: "Raleway" }}>
+                      {c.name}
+                    </Title>
+                    <Text style={{ fontFamily: "Roboto" }}>{c.value}</Text>
                   </Card>
                 </Col>
               ))}
