@@ -140,7 +140,6 @@ function Resume() {
         transition={{ duration: 0.5 }} // Smooth animation
       >
         <div className="resume-bg">
-          {" "}
           <div
             style={{
               display: "flex",
