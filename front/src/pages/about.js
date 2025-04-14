@@ -24,13 +24,12 @@ const calculateAge = (birthday) => {
 };
 
 const myDetails = [
-  { id: 1, name: "Birthday", value: "10 Dec 2001" },
+  { id: 1, name: "Date of Birth", value: "10th Dec 2001" },
   {
     id: 2,
     name: "Age",
     value: calculateAge("10 Dec 2001"),
   },
-  { id: 3, name: "Website", value: "N/A" },
   { id: 4, name: "Phone", value: "(KE) +254 740 900-061" },
   {
     id: 5,
@@ -52,11 +51,11 @@ const mySkills = [
   { id: 1, name: "HTML/CSS", value: "99" },
   { id: 2, name: "JavaScript", value: "85" },
   { id: 3, name: "ReactJS", value: "90" },
-  { id: 4, name: "MongoDB", value: "80" },
-  { id: 5, name: "NodeJS", value: "80" },
-  { id: 6, name: "Express", value: "70" },
-  { id: 7, name: "UX/UI Design", value: "90" },
-  { id: 8, name: "MERN Stack", value: "90" },
+  { id: 4, name: "MongoDB", value: "85" },
+  { id: 5, name: "NodeJS", value: "85" },
+  { id: 6, name: "Express", value: "80" },
+  { id: 7, name: "UX/UI Design", value: "99" },
+  { id: 8, name: "MERN Stack", value: "95" },
 ];
 
 function About() {
