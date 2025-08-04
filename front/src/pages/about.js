@@ -107,7 +107,7 @@ function About() {
             </Text>
           </div>
 
-          <Card>
+          <Card style={{ margin: 10, padding: 5 }}>
             <Row gutter={[20, 20]} align="middle">
               <Col
                 xs={24}
@@ -126,7 +126,7 @@ function About() {
                     objectFit: "cover",
                     borderRadius: 50,
                     border: "3px solid #2a75d7",
-                    padding:2
+                    padding: 2,
                   }}
                 />
               </Col>
