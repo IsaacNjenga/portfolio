@@ -16,7 +16,7 @@ function Home() {
         exit={{ opacity: 0, x: -100 }} // Fade out and slide out left
         transition={{ duration: 0.5 }} // Smooth animation
       >
-        <div className="home-bg">
+        <div className="home-bg" style={{ minHeight:'100vh' }}>
           <div
             style={{
               justifyContent: "center",
