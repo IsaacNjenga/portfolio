@@ -434,7 +434,7 @@ function Portfolio() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              padding: "22px 0px",
+              padding: "16px 0px",
               background: "rgba(255, 255, 255, 0.8)",
               fontFamily: "Raleway",
             }}
@@ -462,7 +462,7 @@ function Portfolio() {
           </div>
           <div
             style={{
-              padding: "22px 0px",
+              padding: "10px 0px",
               background: "rgba(255, 255, 255, 0.8)",
             }}
           >
