@@ -49,6 +49,7 @@ const myDetails = [
 
 const mySkills = [
   { id: 1, name: "HTML/CSS", value: "99" },
+  { id: 10, name: "Tailwind/Material UI", value: "99" },
   { id: 2, name: "JavaScript", value: "85" },
   { id: 3, name: "ReactJS", value: "90" },
   { id: 4, name: "MongoDB", value: "85" },
@@ -56,6 +57,8 @@ const mySkills = [
   { id: 6, name: "Express", value: "80" },
   { id: 7, name: "UX/UI Design", value: "99" },
   { id: 8, name: "MERN Stack", value: "95" },
+  { id: 9, name: "Flask/Django", value: "95" },
+  { id: 11, name: "Deployment/Hosting", value: "99" },
 ];
 
 function About() {
@@ -121,6 +124,9 @@ function About() {
                   style={{
                     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                     objectFit: "cover",
+                    borderRadius: 50,
+                    border: "3px solid #2a75d7",
+                    padding:2
                   }}
                 />
               </Col>
@@ -194,14 +200,17 @@ function About() {
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-              gap: isMobile ? "20px" : "30px",
-              padding: "10px 50px",
-              background: "rgba(255, 255, 255, 0.8)",
+              gap: isMobile ? "25px" : "35px",
+              background: "rgba(255, 255, 255, 0.97)",
+              padding: "20px 50px",
               fontFamily: "Raleway",
+              margin: "0px 30px",
+              marginTop: "20px",
+              borderRadius: "18px",
             }}
           >
             {mySkills.map((skill) => (
-              <div key={skill.id}>
+              <div key={skill.id} style={{ marginBottom: 5 }}>
                 <Text style={{ fontWeight: "bold" }}>{skill.name}</Text>
                 <div>
                   <Progress percent={skill.value} />
