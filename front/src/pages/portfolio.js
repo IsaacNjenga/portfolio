@@ -36,6 +36,11 @@ import w1 from "../assets/images/whisper/Screenshot (261).png";
 import w2 from "../assets/images/whisper/Screenshot (262).png";
 import w3 from "../assets/images/whisper/Screenshot (263).png";
 
+import endo1 from "../assets/images/endocare/endocare1.png";
+import endo2 from "../assets/images/endocare/endocare2.png";
+import endo3 from "../assets/images/endocare/endocare3.png";
+import endo4 from "../assets/images/endocare/endocare4.png";
+
 const { Title, Text, Paragraph } = Typography;
 
 function Portfolio() {
@@ -46,6 +51,7 @@ function Portfolio() {
   const tkfPics = [tkf1, tkf2, tkf3];
   const umcPics = [umc1, umc2, umc3, umc4];
   const whisperPics = [w1, w2, w3];
+  const endocarePics = [endo1, endo2, endo3, endo4];
 
   const tabItems = [
     {
@@ -410,6 +416,83 @@ function Portfolio() {
                   style={{ fontFamily: "Raleway" }}
                 >
                   Visit Whisper
+                </Button>
+              </dupiv>
+            </Col>
+          </Row>
+        </Card>
+      ),
+    },
+    {
+      label: <Text style={{ fontFamily: "Raleway" }}>EndoCare</Text>,
+      key: "6",
+      children: (
+        <Card>
+          <Row gutter={[20, 20]}>
+            <Col
+              xs={24}
+              sm={24}
+              md={10}
+              lg={10}
+              style={{ textAlign: "center" }}
+            >
+              <Carousel autoplay autoplaySpeed={2500} fade>
+                {endocarePics.map((picSrc) => (
+                  <Image
+                    src={picSrc}
+                    alt="easym"
+                    width={isMobile ? "auto" : 400}
+                    height="auto"
+                    style={{
+                      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                      objectFit: "contain",
+                    }}
+                  />
+                ))}
+              </Carousel>
+            </Col>
+
+            <Col xs={24} sm={24} md={14} lg={14}>
+              <Title level={2} style={{ fontFamily: "Raleway" }}>
+                EndoCare
+              </Title>
+              <Paragraph style={{ fontFamily: "Roboto" }}>
+                This project is a web-based AI tool designed to assist in the
+                early detection of diabetic and endocrine-related illnesses
+                using medical images. By leveraging machine learning,
+                specifically through Google’s Teachable Machine, the system can
+                analyze uploaded images and provide predictions about possible
+                conditions. The process is simple and accessible: a user uploads
+                an image, the model processes it directly in the browser using
+                TensorFlow.js, and an instant prediction is displayed. This
+                eliminates the need for a heavy backend, making it lightweight,
+                private, and fast. The design ensures that sensitive medical
+                data stays on the user’s device while still providing meaningful
+                insights.
+              </Paragraph>
+              <Paragraph style={{ fontFamily: "Roboto" }}>
+                The problem it addresses is the limited access to early
+                diagnostic tools for diabetes and endocrine disorders,
+                particularly in regions where healthcare resources and
+                specialists may be scarce. By making predictive AI models
+                available through a simple web application, the project
+                demonstrates how artificial intelligence can lower barriers to
+                medical assistance, empower individuals with accessible
+                self-screening, and potentially aid healthcare workers in
+                triaging cases. While it is not a replacement for professional
+                diagnosis, the system shows strong potential to support
+                preventive healthcare, raise awareness, and pave the way for
+                more advanced AI-driven health solutions in the future.
+              </Paragraph>
+              <dupiv style={{ marginTop: "20px" }}>
+                <Button
+                  type="primary"
+                  href="https://endocare-kappa.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontFamily: "Raleway" }}
+                >
+                  Visit EndoCare
                 </Button>
               </dupiv>
             </Col>
