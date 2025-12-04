@@ -45,7 +45,7 @@ function Portfolio() {
           style={{
             minHeight: "100vh",
             background:
-              "linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%)",
+              "linear-gradient(180deg, #261f60ff 0%, #302b63 50%, #24243e 100%)",
             position: "relative",
             overflow: "hidden",
           }}
@@ -126,7 +126,6 @@ function Portfolio() {
                     variants={cardVariants}
                   >
                     <Card
-                      bordered={false}
                       style={{
                         height: "100%",
                         background: "rgba(255, 255, 255, 0.05)",

@@ -24,7 +24,20 @@ function Resume() {
         </Title>
       ),
       children: (
-        <Card variant={false}>
+        <Card
+          variant={false}
+          style={{
+            height: "100%",
+            background: "rgba(255, 255, 255, 0.8)",
+            backdropFilter: "blur(10px)",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            borderRadius: 20,
+            overflow: "hidden",
+            boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
+          }}
+          bodyStyle={{ padding: 16 }}
+          hoverable
+        >
           <Title
             level={4}
             style={{
@@ -69,7 +82,20 @@ function Resume() {
         </Title>
       ),
       children: (
-        <Card variant={false}>
+        <Card
+          variant={false}
+          style={{
+            height: "100%",
+            background: "rgba(255, 255, 255, 0.8)",
+            backdropFilter: "blur(10px)",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            borderRadius: 20,
+            overflow: "hidden",
+            boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
+          }}
+          bodyStyle={{ padding: 16 }}
+          hoverable
+        >
           <Title
             level={4}
             style={{
@@ -101,7 +127,20 @@ function Resume() {
       ),
       children: (
         <>
-          <Card variant={false}>
+          <Card
+            variant={false}
+            style={{
+              height: "100%",
+              background: "rgba(255, 255, 255, 0.8)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRadius: 20,
+              overflow: "hidden",
+              boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
+            }}
+            bodyStyle={{ padding: 16 }}
+            hoverable
+          >
             <Title
               level={4}
               style={{
@@ -201,36 +240,54 @@ function Resume() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              padding: isMobile ? "10px 0px" : "22px 0px",
-              background: "rgba(255, 255, 255, 0.8)",
+              padding: isMobile ? "10px 0px" : "18px 0px",
+              background:
+                "linear-gradient(180deg, #261f60ff 0%, #302b63 50%, #24243e 100%)",
               fontFamily: "Raleway",
             }}
           >
-            <Title
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               style={{
-                textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
-                fontFamily: "Raleway",
-                borderBottom: "3px solid #2a75d7",
-                color: "#3c3b39",
-              }}
-            >
-              Resume
-            </Title>
-            <Text
-              type="secondary"
-              style={{
-                marginTop: 8,
                 textAlign: "center",
-                fontFamily: "Raleway",
+                //zIndex: 1
               }}
             >
-              A timeline preview of my accomplishments.
-            </Text>
+              <Title
+                style={{
+                  fontFamily: "Raleway, sans-serif",
+                  fontSize: "3.5rem",
+                  fontWeight: 800,
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  marginBottom: 16,
+                  textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
+                }}
+              >
+                Resume
+              </Title>
+              <Text
+                type="secondary"
+                style={{
+                  fontSize: "1.2rem",
+                  color: "rgba(255, 255, 255, 0.7)",
+                  fontFamily: "Raleway, sans-serif",
+                  letterSpacing: "1px",
+                }}
+              >
+                A timeline preview of my accomplishments.
+              </Text>
+            </motion.div>
           </div>
           <div
             style={{
-              background: "rgba(255, 255, 255, 0.8)",
-              padding: "10px 20px",
+              background: "transparent",
+              padding: "20px 20px",
+              backdropFilter: "blur(2px)",
             }}
           >
             {isMobile ? (

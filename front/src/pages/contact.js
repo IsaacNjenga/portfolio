@@ -59,32 +59,42 @@ function Contact() {
               position: "relative",
             }}
           >
-            <Title
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               style={{
-                fontFamily: "Raleway, sans-serif",
-                fontSize: "3.5rem",
-                fontWeight: 800,
-                background:
-                  "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                marginBottom: 16,
-                textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
+                textAlign: "center",
+                //zIndex: 1
               }}
             >
-              Contact
-            </Title>
-            <Text
-              type="secondary"
-              style={{
-                fontSize: "1.2rem",
-                color: "rgba(255, 255, 255, 0.7)",
-                fontFamily: "Raleway, sans-serif",
-                letterSpacing: "1px",
-              }}
-            >
-              Reach out to me whenever
-            </Text>
+              <Title
+                style={{
+                  fontFamily: "Raleway, sans-serif",
+                  fontSize: "3.5rem",
+                  fontWeight: 800,
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  marginBottom: 16,
+                  textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
+                }}
+              >
+                Contact
+              </Title>
+              <Text
+                type="secondary"
+                style={{
+                  fontSize: "1.2rem",
+                  color: "rgba(255, 255, 255, 0.7)",
+                  fontFamily: "Raleway, sans-serif",
+                  letterSpacing: "1px",
+                }}
+              >
+                Reach out to me whenever
+              </Text>
+            </motion.div>
           </div>
 
           <Card

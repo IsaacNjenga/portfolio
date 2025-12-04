@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Card, Divider, Typography } from "antd";
+import { Card, Col, Divider, Row, Typography } from "antd";
 import "../assets/css/services.css";
 import webIcon from "../assets/icons/webDevelopment.png";
 import apiIcon from "../assets/icons/api.png";
@@ -88,63 +88,101 @@ function Services() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            padding: "22px 0px",
-            background: "rgba(255, 255, 255, 0.8)",
+            padding: "18px 0px",
+            //background: "rgba(255, 255, 255, 0.8)",
+            background:
+              "linear-gradient(180deg, #261f60ff 0%, #302b63 50%, #24243e 100%)",
             fontFamily: "Raleway",
           }}
         >
-          <Title
+          {" "}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             style={{
-              textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
-              fontFamily: "Raleway",
-              borderBottom: "3px solid #2a75d7",
-              color: "#3c3b39",
+              textAlign: "center",
+              //zIndex: 1
             }}
           >
-            Services
-          </Title>
-          <Text
-            type="secondary"
-            style={{ marginTop: 8, textAlign: "center", fontFamily: "Raleway" }}
-          >
-            My areas of expertise.
-          </Text>
+            <Title
+              style={{
+                fontFamily: "Raleway, sans-serif",
+                fontSize: "3.5rem",
+                fontWeight: 800,
+                background:
+                  "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                marginBottom: 16,
+                textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
+              }}
+            >
+              Services
+            </Title>
+            <Text
+              type="secondary"
+              style={{
+                fontSize: "1.2rem",
+                color: "rgba(255, 255, 255, 0.7)",
+                fontFamily: "Raleway, sans-serif",
+                letterSpacing: "1px",
+              }}
+            >
+              My areas of expertise.
+            </Text>
+          </motion.div>
         </div>
         <div
           style={{
-            background: "rgba(255, 255, 255, 0.8)",
-            padding: "10px 20px",
+            background: "transparent",
+            padding: "40px 30px",
+            backdropFilter: "blur(2px)",
           }}
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-              gap: "10px",
-            }}
-          >
+          <Row gutter={[32, 32]} justify="center">
             {myServices.map((s) => (
-              <Card hoverable key={s.id}>
-                <div
+              <Col xs={24} sm={12} md={8} key={s.id}>
+                <Card
                   style={{
-                    textAlign: "center",
+                    height: "100%",
+                    background: "rgba(255, 255, 255, 0.8)",
+                    backdropFilter: "blur(10px)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    borderRadius: 20,
+                    overflow: "hidden",
+                    boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
                   }}
+                  bodyStyle={{ padding: 16 }}
+                  hoverable
                 >
-                  <img
-                    src={s.icon}
-                    alt="icon"
+                  <div
                     style={{
-                      width: "55px",
-                      height: "55px",
+                      textAlign: "center",
                     }}
-                  />
-                  <Divider />
-                  <h2>{s.title}</h2>
-                  <p>{s.content}</p>
-                </div>
-              </Card>
+                  >
+                    <img
+                      src={s.icon}
+                      alt="icon"
+                      style={{
+                        width: "55px",
+                        height: "55px",
+                      }}
+                    />
+                    <Divider />
+                    <div style={{ height: "100%", marginBottom: "12px" }}>
+                      <Title level={3} style={{ fontFamily: "Raleway" }}>
+                        {s.title}
+                      </Title>
+                    </div>
+                    <Text style={{ marginBottom: 0, fontFamily: "Raleway" }}>
+                      {s.content}
+                    </Text>
+                  </div>
+                </Card>
+              </Col>
             ))}
-          </div>
+          </Row>
         </div>
       </div>
     </motion.div>

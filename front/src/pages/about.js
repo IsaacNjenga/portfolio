@@ -79,35 +79,64 @@ function About() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              padding: "22px 0px",
-              background: "rgba(255, 255, 255, 0.8)",
+              padding: "18px 0px",
+              //background: "rgba(255, 255, 255, 0.8)",
+              background:
+                "linear-gradient(180deg, #261f60ff 0%, #302b63 50%, #24243e 100%)",
               fontFamily: "Raleway",
             }}
           >
-            <Title
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               style={{
-                textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
-                fontFamily: "Raleway",
-                borderBottom: "3px solid #2a75d7",
-                color: "#3c3b39",
-              }}
-            >
-              About
-            </Title>
-            <Text
-              type="secondary"
-              style={{
-                marginTop: 8,
                 textAlign: "center",
-                fontFamily: "Raleway",
+                //zIndex: 1
               }}
             >
-              Passionate full-stack developer with experience in building
-              dynamic and scalable web applications.
-            </Text>
+              <Title
+                style={{
+                  fontFamily: "Raleway, sans-serif",
+                  fontSize: "3.5rem",
+                  fontWeight: 800,
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  marginBottom: 16,
+                  textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
+                }}
+              >
+                About
+              </Title>
+              <Text
+                type="secondary"
+                style={{
+                  fontSize: "1.2rem",
+                  color: "rgba(255, 255, 255, 0.7)",
+                  fontFamily: "Raleway, sans-serif",
+                  letterSpacing: "1px",
+                }}
+              >
+                Passionate full-stack developer with experience in building
+                dynamic and scalable web applications.
+              </Text>
+            </motion.div>
           </div>
 
-          <Card style={{ margin: 10, padding: 5 }}>
+          <Card
+            style={{
+              height: "100%",
+              background: "rgba(255, 255, 255, 0.8)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRadius: 0,
+              overflow: "hidden",
+              boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
+            }}
+            bodyStyle={{ padding: 16 }}
+          >
             <Row gutter={[20, 20]} align="middle">
               <Col
                 xs={24}
@@ -175,22 +204,34 @@ function About() {
               justifyContent: "center",
               alignItems: "center",
               padding: "20px 10px",
-              background: "rgba(255, 255, 255, 0.8)",
+              background:
+                "linear-gradient(180deg, #261f60ff 0%, #302b63 50%, #24243e 100%)",
               fontFamily: "Raleway",
             }}
           >
             <Title
               style={{
-                fontFamily: "Raleway",
-                borderBottom: "3px solid #2a75d7",
-                color: "#3c3b39",
+                fontFamily: "Raleway, sans-serif",
+                fontSize: "3.5rem",
+                fontWeight: 800,
+                background:
+                  "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                marginBottom: 16,
+                textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
               }}
             >
               Skills
             </Title>
             <Text
               type="secondary"
-              style={{ display: "block", marginTop: 8, fontFamily: "Raleway" }}
+              style={{
+                fontSize: "1.2rem",
+                color: "rgba(255, 255, 255, 0.7)",
+                fontFamily: "Raleway, sans-serif",
+                letterSpacing: "1px",
+              }}
             >
               Proficient in modern web development technologies and frameworks.
             </Text>
@@ -202,11 +243,11 @@ function About() {
               gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
               gap: isMobile ? "25px" : "35px",
               background: "rgba(255, 255, 255, 0.97)",
-              padding: "20px 50px",
+              padding: "40px 50px",
               fontFamily: "Raleway",
               margin: "0px 30px",
-              marginTop: "20px",
-              borderRadius: "18px",
+              borderRadius: 0,
+              backdropFilter: "blur(3px)",
             }}
           >
             {mySkills.map((skill) => (
