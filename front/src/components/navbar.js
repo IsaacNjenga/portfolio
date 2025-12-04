@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useLocation, Link, Outlet } from "react-router-dom";
-import { Layout, Menu, FloatButton, Button, Drawer } from "antd";
+import { Layout, Menu, FloatButton, Button, Drawer, Typography } from "antd";
 import FooterContent from "./footerContent";
 import { UserContext } from "../App";
 import {
@@ -11,6 +11,7 @@ import {
 } from "@ant-design/icons";
 
 const { Header, Content, Footer } = Layout;
+const { Title } = Typography;
 
 function Navbar() {
   const location = useLocation();
@@ -44,62 +45,85 @@ function Navbar() {
             style={{
               height: "auto",
               width: "100%",
-              background: "#e9e8e6",
-              padding: "10px 15px",
+              background:
+                "linear-gradient(180deg, #0f0c29 10%, #302b63 40%, #100d2a 100%)",
+              padding: isMobile ? "12px 10px" : "12px 30px",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
+              borderBottom: "1px solid #0f0c29",
             }}
           >
             <div style={{ display: "flex", alignItems: "center" }}>
               {isMobile ? (
                 <>
-                  <h1
+                  <div
                     style={{
-                      margin: 0,
-                      fontSize: "1.3rem",
-                      letterSpacing: "1px",
-                      fontFamily: "Raleway",
-                      // zIndex: 10,
-                      color: "#3c3b39",
+                      width: "100%",
                     }}
                   >
-                    <Link
-                      to="/"
+                    <Title
+                      level={3}
                       style={{
-                        textDecoration: "none",
+                        margin: 0,
+                        fontSize: "1.8rem",
+                        letterSpacing: "0.5px",
+                        fontFamily: "Raleway",
                         color: "#3c3b39",
-                        borderBottom: "2px solid #2a75d7",
+                        fontWeight: "lighter",
+                        textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
+                        background:
+                          "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
                       }}
                     >
-                      ISAAC NJENGA
-                    </Link>
-                  </h1>
+                      <Link
+                        to="/"
+                        style={{
+                          textDecoration: "none",
+                        }}
+                      >
+                        ISAAC NJENGA
+                      </Link>
+                    </Title>
+                  </div>
                 </>
               ) : (
                 <>
-                  <h1
+                  <div
                     style={{
-                      margin: 0,
-                      fontSize: "2rem",
-                      letterSpacing: "2px",
-                      fontFamily: "Raleway",
-                      // zIndex: 10,
-                      color: "#3c3b39",
-                      fontWeight: "lighter",
+                      width: "70%",
                     }}
                   >
-                    <Link
-                      to="/"
+                    <Title
+                      level={3}
                       style={{
-                        textDecoration: "none",
+                        margin: 0,
+                        fontSize: "2.3rem",
+                        letterSpacing: "2px",
+                        fontFamily: "Raleway",
+                        // zIndex: 10,
                         color: "#3c3b39",
-                        borderBottom: "2px solid #2a75d7",
+                        fontWeight: "lighter",
+                        textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
+                        background:
+                          "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
                       }}
                     >
-                      ISAAC NJENGA
-                    </Link>
-                  </h1>
+                      <Link
+                        to="/"
+                        style={{
+                          textDecoration: "none",
+                          borderBottom: "2px solid #2a75d7",
+                        }}
+                      >
+                        ISAAC NJENGA
+                      </Link>
+                    </Title>
+                  </div>
                 </>
               )}
             </div>
@@ -122,7 +146,7 @@ function Navbar() {
                   onClick={toggleDrawer}
                   icon={
                     <MenuOutlined
-                      style={{ fontSize: "1.8rem", color: "#3c3b39" }}
+                      style={{ fontSize: "1.8rem", color: "#667eea" }}
                     />
                   }
                 />
@@ -153,7 +177,7 @@ function Navbar() {
                       <Link
                         to={item.path}
                         style={{
-                          color: "#3c3b39",
+                          color: "rgba(255, 255, 255, 0.7)",
                           textDecoration: "none",
                         }}
                       >

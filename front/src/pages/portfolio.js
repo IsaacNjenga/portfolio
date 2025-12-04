@@ -68,7 +68,7 @@ function Portfolio() {
           {/* Header Section */}
           <div
             style={{
-              padding: "20px 24px 40px",
+              padding: "0px 24px 40px",
               textAlign: "center",
               position: "relative",
               //zIndex: 1
