@@ -51,17 +51,25 @@ function Contact() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              padding: "22px 0px",
-              background: "rgba(255, 255, 255, 0.8)",
+              padding: "18px 0px",
+              //background: "rgba(255, 255, 255, 0.8)",
+              background:
+                "linear-gradient(180deg, #261f60ff 0%, #302b63 50%, #24243e 100%)",
               fontFamily: "Raleway",
+              position: "relative",
             }}
           >
             <Title
               style={{
-                textShadow: "10px 10px 15px rgba(0, 0, 0, 0.4)",
-                fontFamily: "Raleway",
-                borderBottom: "3px solid #2a75d7",
-                color: "#3c3b39",
+                fontFamily: "Raleway, sans-serif",
+                fontSize: "3.5rem",
+                fontWeight: 800,
+                background:
+                  "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                marginBottom: 16,
+                textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
               }}
             >
               Contact
@@ -69,25 +77,38 @@ function Contact() {
             <Text
               type="secondary"
               style={{
-                marginTop: 8,
-                textAlign: "center",
-                fontFamily: "Raleway",
+                fontSize: "1.2rem",
+                color: "rgba(255, 255, 255, 0.7)",
+                fontFamily: "Raleway, sans-serif",
+                letterSpacing: "1px",
               }}
             >
               Reach out to me whenever
             </Text>
           </div>
 
-          <Card className="contact-card">
+          <Card
+            style={{
+              background: "transparent",
+              border: "none",
+              boxShadow: "none",
+              padding: "40px 20px",
+            }}
+          >
             <Row gutter={[24, 24]} justify="center">
               {myContact.map((c) => (
                 <Col xs={24} sm={12} md={8} key={c.id}>
                   <Card variant={false} className="contact-item">
                     <div className="contact-icon">{c.icon}</div>
-                    <Title level={3} style={{ fontFamily: "Raleway" }}>
+                    <Title
+                      level={3}
+                      style={{ fontFamily: "Raleway", color: "#fff" }}
+                    >
                       {c.name}
                     </Title>
-                    <Text style={{ fontFamily: "Roboto" }}>{c.value}</Text>
+                    <Text style={{ fontFamily: "Roboto", color: "#fff" }}>
+                      {c.value}
+                    </Text>
                   </Card>
                 </Col>
               ))}

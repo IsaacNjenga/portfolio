@@ -7,6 +7,8 @@ function FooterContent() {
       style={{
         padding: "20px",
         textAlign: "center",
+        background:
+          "linear-gradient(180deg, #24243e 0%, #302b63 50%, #24243e 100%)",
       }}
     >
       <div
@@ -15,7 +17,7 @@ function FooterContent() {
           flexDirection: "column",
         }}
       >
-        <p style={{ color: "#3c3b39" }}>
+        <p style={{ color: "#bfbbb4ff" }}>
           Copyright &copy; {new Date().getFullYear()} By Isaac Njenga. <br />
           All Rights Reserved.
         </p>

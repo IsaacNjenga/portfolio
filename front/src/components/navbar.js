@@ -46,12 +46,14 @@ function Navbar() {
               height: "auto",
               width: "100%",
               background:
-                "linear-gradient(180deg, #0f0c29 10%, #302b63 40%, #100d2a 100%)",
+                "linear-gradient(180deg, #161237d0 10%, #302b63da 40%, #261f60ff 100%)",
               padding: isMobile ? "12px 10px" : "12px 30px",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              borderBottom: "1px solid #0f0c29",
+              borderBottom: "1px solid #261f60ff",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.03)",
+              backdropFilter: "blur(2px)",
             }}
           >
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -69,19 +71,21 @@ function Navbar() {
                         fontSize: "1.8rem",
                         letterSpacing: "0.5px",
                         fontFamily: "Raleway",
-                        color: "#3c3b39",
+
                         fontWeight: "lighter",
-                        textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
-                        background:
-                          "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
+                        // textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
+                        // background:
+                        //   "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+                        // WebkitBackgroundClip: "text",
+                        // WebkitTextFillColor: "transparent",
+                        color: "rgba(255, 255, 255, 0.7)",
                       }}
                     >
                       <Link
                         to="/"
                         style={{
                           textDecoration: "none",
+                          color: "rgba(255, 255, 255, 0.7)",
                         }}
                       >
                         ISAAC NJENGA
@@ -103,21 +107,21 @@ function Navbar() {
                         fontSize: "2.3rem",
                         letterSpacing: "2px",
                         fontFamily: "Raleway",
-                        // zIndex: 10,
-                        color: "#3c3b39",
                         fontWeight: "lighter",
-                        textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
-                        background:
-                          "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
+                        // textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
+                        // background:
+                        //   "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+                        // WebkitBackgroundClip: "text",
+                        // WebkitTextFillColor: "transparent",
+                        color: "rgba(255, 255, 255, 0.7)",
                       }}
                     >
                       <Link
                         to="/"
                         style={{
                           textDecoration: "none",
-                          borderBottom: "2px solid #2a75d7",
+                          color: "rgba(255, 255, 255, 0.7)",
+                          //borderBottom: "2px solid #a4aebaff",
                         }}
                       >
                         ISAAC NJENGA
