@@ -28,9 +28,9 @@ function Home() {
                 style={{
                   fontFamily: "Raleway",
                   fontSize: "3rem",
-                  fontWeight: "bolder",
+                  fontWeight: "900",
                   color: "#333",
-                  textShadow: "1px 0px 15px rgba(0, 0, 0, 0.4)",
+                  textShadow: "1px 0px 15px rgba(0, 0, 0, 0.48)",
                   marginBottom: 0,
                 }}
               >

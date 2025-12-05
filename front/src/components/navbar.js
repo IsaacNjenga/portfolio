@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation, Link, Outlet } from "react-router-dom";
 import { Layout, Menu, FloatButton, Button, Drawer, Typography } from "antd";
 import FooterContent from "./footerContent";
@@ -15,9 +15,10 @@ const { Title } = Typography;
 
 function Navbar() {
   const location = useLocation();
-  const [current, setCurrent] = useState(location.pathname);
   const { isMobile } = useContext(UserContext);
+  const [current, setCurrent] = useState(location.pathname);
   const [drawerVisible, setDrawerVisible] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -34,6 +35,21 @@ function Navbar() {
     setCurrent(e.key);
   };
 
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
   return (
     <>
       <FloatButton.Group shape="circle" style={{ insetInlineEnd: 24 }}>
@@ -45,15 +61,16 @@ function Navbar() {
             style={{
               height: "auto",
               width: "100%",
-              background:
-                "linear-gradient(180deg, #161237d0 10%, #302b63da 40%, #261f60ff 100%)",
-              padding: isMobile ? "12px 10px" : "12px 30px",
+              background: scrolled
+                ? "linear-gradient(180deg, #261e5c  10%, #3d339a05 100%)"
+                : "#261e5c",
+              padding: isMobile ? "12px 10px" : "6px 26px",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              borderBottom: "1px solid #261f60ff",
+              border: "none",
               boxShadow: "0 2px 8px rgba(0, 0, 0, 0.03)",
-              backdropFilter: "blur(2px)",
+              backdropFilter: "blur(1.2px)",
             }}
           >
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -71,21 +88,19 @@ function Navbar() {
                         fontSize: "1.8rem",
                         letterSpacing: "0.5px",
                         fontFamily: "Raleway",
-
                         fontWeight: "lighter",
-                        // textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
-                        // background:
-                        //   "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
-                        // WebkitBackgroundClip: "text",
-                        // WebkitTextFillColor: "transparent",
-                        color: "rgba(255, 255, 255, 0.7)",
+                        textShadow: "0 10px 30px rgba(102, 126, 234, 0.53)",
+                        background:
+                          "linear-gradient(135deg, #c1c5d5ff 0%, #f1ebf6ff 50%, #a6b9dfff 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
                       }}
                     >
                       <Link
                         to="/"
                         style={{
                           textDecoration: "none",
-                          color: "rgba(255, 255, 255, 0.7)",
+                          color: "rgba(255, 255, 255, 1)",
                         }}
                       >
                         ISAAC NJENGA
@@ -101,27 +116,26 @@ function Navbar() {
                     }}
                   >
                     <Title
-                      level={3}
+                      level={2}
                       style={{
                         margin: 0,
                         fontSize: "2.3rem",
                         letterSpacing: "2px",
                         fontFamily: "Raleway",
                         fontWeight: "lighter",
-                        // textShadow: "0 10px 30px rgba(102, 126, 234, 0.3)",
-                        // background:
-                        //   "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
-                        // WebkitBackgroundClip: "text",
-                        // WebkitTextFillColor: "transparent",
-                        color: "rgba(255, 255, 255, 0.7)",
+                        textShadow: "0 10px 30px rgba(102, 126, 234, 0.53)",
+                        background:
+                          "linear-gradient(135deg, #c1c5d5ff 0%, #f1ebf6ff 50%, #a6b9dfff 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        color: "rgba(255, 255, 255, 1)",
                       }}
                     >
                       <Link
                         to="/"
                         style={{
                           textDecoration: "none",
-                          color: "rgba(255, 255, 255, 0.7)",
-                          //borderBottom: "2px solid #a4aebaff",
+                          color: "rgba(255, 255, 255, 1)",
                         }}
                       >
                         ISAAC NJENGA
@@ -181,7 +195,7 @@ function Navbar() {
                       <Link
                         to={item.path}
                         style={{
-                          color: "rgba(255, 255, 255, 0.7)",
+                          color: "rgba(255, 255, 255, 1)",
                           textDecoration: "none",
                         }}
                       >
